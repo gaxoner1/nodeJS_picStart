@@ -19,6 +19,7 @@ app.use(morgan('tiny'));
 app.use(cors({
   origin:'process.env.ORIGIN_URL'
 }));
+app.use(express.json());
 
 app.get('/', (req, res)=> {
   res.json({

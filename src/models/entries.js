@@ -1,4 +1,4 @@
-const mongoose from ('mongoose');
+const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
@@ -26,16 +26,14 @@ const entriesSchema = new Schema({
     type: Number,
     required: true
   },
-  dateCreated: defaultDate,
-  dateUpdated: defaultDate,
   visitDate: {
     required: true,
-    type: Date,
+    type: Date
   },
 }, {
   timestamps:true
 });
 
-const entry = mongoose.model('Entry', entriesSchema);
+const entry = mongoose.model('entry', entriesSchema);
 
 module.exports = entry;
